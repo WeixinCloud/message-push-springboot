@@ -41,6 +41,7 @@ public class IndexController {
     @PostMapping
     @ResponseBody
     public ResponseEntity<String> sendWxMsg(
+            @RequestHeader(name = "x-wx-source") String source,
             @RequestHeader(name = "x-wx-openid") String openId,
             @RequestBody Map<String, Object> body) {
         HttpHeaders responseHeaders = new HttpHeaders();
